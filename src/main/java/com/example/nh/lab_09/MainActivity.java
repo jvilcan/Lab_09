@@ -67,8 +67,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openMap(){
-        Uri webpage= Uri.parse("http://www.isur.edu.pe");
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        Uri geolocation = Uri.parse("geo:37.7749, -122.4194");
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(geolocation);
+
         if(intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
 
